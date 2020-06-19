@@ -14,7 +14,6 @@ img {
   height: auto;
 }
 svg {
-  display: block;
   max-width: 100%;
   height: auto;
 }
@@ -239,9 +238,10 @@ button {
 .svg-form {
   position: absolute;
   left: 19px;
-  right: 11px;
   top: 50%;
   transform: translateY(-50%);
+  fill: var(--primary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .form {
   padding: 40px;
@@ -260,24 +260,33 @@ button {
 }
 
 .form-field {
+  display: block;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
   margin-bottom: 28px;
 }
 .form-input {
+  width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
+  padding-left: 42px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
+}
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+  color: var(--accent-color);
+  transform: translate(-30px, -40px);
+}
+.form-field:focus-within > .svg-form {
+  fill: var(--accent-color);
 }
 .form-label {
   position: absolute;
   top: 50%;
   left: 42px;
   transform: translateY(-50%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-size: 14px;
   line-height: 1.2;
@@ -317,7 +326,28 @@ textarea {
 
   color: #757575;
 }
+.checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.checkbox-svg {
+  position: relative;
+  top: 50%;
+  transform: translateY(5px);
+  border-radius: 2px;
+  border: 2px solid var(--primary-text-color);
+  background-origin: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.conditions:focus-within > .checkbox-svg {
+  background-color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
 
+.checkbox-link {
+  color: var(--accent-color);
+}
 /* profit */
 
 .profit {
