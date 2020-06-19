@@ -48,7 +48,7 @@ ul {
   padding-top: 94px;
   padding-bottom: 94px;
 }
-button {
+.button {
   color: var(--second-text-color);
   background-color: var(--accent-color);
   font-size: 16px;
@@ -214,6 +214,7 @@ button {
   left: 0;
   z-index: 200;
   background-color: rgba(0, 0, 0, 0.2);
+  transition: 500ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -235,17 +236,7 @@ button {
     0px 1px 3px rgba(0, 0, 0, 0.12);
   border-radius: 4px;
 }
-.svg-form {
-  position: absolute;
-  left: 19px;
-  top: 50%;
-  transform: translateY(-50%);
-  fill: var(--primary-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.form {
-  padding: 40px;
-}
+
 .form-title {
   height: 23px;
   margin-top: 0px;
@@ -257,6 +248,37 @@ button {
   text-align: center;
   letter-spacing: 0.03em;
   color: #212121;
+}
+
+.form {
+  padding: 40px;
+}
+.close-button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  padding: 0;
+  margin: 0;
+  border-radius: 50px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.close-button:checked .svg-close {
+  color: var(--accent-color);
+  border: var(--accent-color);
+}
+.svg-close {
+  display: block;
+  margin: 5px;
+}
+.svg-form {
+  position: absolute;
+  left: 19px;
+  top: 50%;
+  transform: translateY(-50%);
+  fill: var(--primary-text-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .form-field {
@@ -340,7 +362,7 @@ textarea {
   background-origin: border-box;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.conditions:focus-within > .checkbox-svg {
+.checkbox:checked + .checkbox-svg {
   background-color: var(--accent-color);
   border: 2px solid var(--accent-color);
 }
