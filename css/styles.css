@@ -480,16 +480,11 @@ textarea {
 }
 .team-links {
   display: flex;
-  padding-left: 0;
-  justify-content: center;
 }
 .team-links .link {
   margin-right: 10px;
   width: 44px;
   height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .team-links .link:nth-child(4) {
@@ -545,7 +540,6 @@ textarea {
 .our-clients {
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 170px;
   height: 90px;
   border: 1px solid #afb1b8;
