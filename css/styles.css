@@ -257,21 +257,23 @@ ul {
   position: absolute;
   top: 8px;
   right: 8px;
-  padding: 0;
-  margin: 0;
+  display: flex;
+  padding: 5px;
   border-radius: 50px;
 
   background: #ffffff;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.close-button:checked .svg-close {
-  color: var(--accent-color);
-  border: var(--accent-color);
+.close-button:hover .svg-close,
+.close-button:focus .svg-close {
+  border-color: var(--accent-color);
+  fill: var(--accent-color);
 }
+
 .svg-close {
-  display: block;
-  margin: 5px;
+  fill: var(--primary-text-color);
 }
+
 .svg-form {
   position: absolute;
   left: 19px;
